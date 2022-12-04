@@ -15,20 +15,37 @@ VIRTUAL_HEIGHT = 243
 PADDLE_SPEED = 200
 
 function love.load()
+    -- set love's default filter to "nearest-neighbor", which essentially
+    -- means there will be no filtering of pixels (blurriness), which is
+    -- important for a nice crisp, 2D look
     love.graphics.setDefaultFilter('nearest', 'nearest')
-    
+
+    -- set the title of our application window
+    love.window.setTitle('Pong')
+
+    -- "seed" the RNG so that calls to random are always random
+    -- use the current time, since that will vary on startup every time
     math.randomseed(os.time())
     
     smallFont = love.graphics.newFont('font.ttf', 8)
 
+    -- larger font for drawing the score on the screen
+    scoreFont = love.graphics.newFont('font.ttf', 32)
+
     love.graphics.setFont(smallFont)
 
+    -- initialize window with virtual resolution
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = false,
         vsync = true
     })
 
+    -- initialize score variables, used for rendering on the screen and keeping
+    -- track of the winner
+    player1Score = 0
+    player2Score = 0
+    
     -- initialize our player paddles; make them global so that they can be
     -- detected by other functions and modules
     player1 = Paddle(10, 30, 5, 20)
@@ -42,7 +59,10 @@ function love.load()
     -- we will use this to determine behavior during render and update
     gameState = 'start'
 end
-
+--[[
+    Runs every frame, with "dt" passed in, our delta in seconds 
+    since the last frame, which LÖVE2D supplies us.
+]]
 function love.update(dt)
     -- player 1 movement
     if love.keyboard.isDown('w') then
@@ -114,6 +134,14 @@ function love.draw()
         love.graphics.printf('Hello Play State!', 0, 20, VIRTUAL_WIDTH, 'center')
     end
 
+    -- draw score on the left and right center of the screen
+    -- need to switch font to draw before actually printing
+    love.graphics.setFont(scoreFont)
+    love.graphics.print(tostring(player1Score), VIRTUAL_WIDTH / 2 - 50,
+            VIRTUAL_HEIGHT / 3)
+    love.graphics.print(tostring(player2Score), VIRTUAL_WIDTH / 2 + 30,
+            VIRTUAL_HEIGHT / 3)
+
     -- render paddles, now using their class's render method
     player1:render()
     player2:render()
@@ -121,6 +149,18 @@ function love.draw()
     -- render ball using its class's render method
     ball:render()
 
+    -- new function just to demonstrate how to see FPS in LÖVE2D
+    displayFPS()
+
     -- end rendering at virtual resolution
     push:apply('end')
+end
+--[[
+    Renders the current FPS.
+]]
+function displayFPS()
+    -- simple FPS display across all states
+    love.graphics.setFont(smallFont)
+    love.graphics.setColor(0, 255/255, 0, 255/255)
+    love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 10, 10)
 end
