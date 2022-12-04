@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bdbaded-2f6f-4109-ab1f-991710127a02" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pong.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pong.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ball.lua" beforeDir="false" afterPath="$PROJECT_DIR$/Ball.lua" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/main.lua" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670182391238</updated>
       <workItem from="1670182395101" duration="22000" />
-      <workItem from="1670182418482" duration="3694000" />
+      <workItem from="1670182418482" duration="4221000" />
     </task>
     <servers />
   </component>
