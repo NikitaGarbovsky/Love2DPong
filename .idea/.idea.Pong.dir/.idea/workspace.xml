@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bdbaded-2f6f-4109-ab1f-991710127a02" name="Changes" comment="" />
+    <list default="true" id="7bdbaded-2f6f-4109-ab1f-991710127a02" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pong.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pong.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.lua" beforeDir="false" afterPath="$PROJECT_DIR$/main.lua" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ISkUkFQJC5gDyYXJ0wamW5CPJd" />
   <component name="ProjectViewState">
@@ -14,6 +20,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -29,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670182391238</updated>
       <workItem from="1670182395101" duration="22000" />
+      <workItem from="1670182418482" duration="1775000" />
     </task>
     <servers />
   </component>
